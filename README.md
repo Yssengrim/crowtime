@@ -34,6 +34,80 @@ tool that works well on desktops and servers alike.
 
 Clone the repository:
 
-```bash
-git clone 
+git clone https://github.com/Yssengrim/crowtime.git
 cd crowsight
+
+Create and activate a virtual environment, then install dependencies:
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+Run the visualizer:
+
+python main.py
+
+## Usage
+
+Basic usage:
+
+python main.py --host 1.1.1.1 --port 443 --interval 1.0
+
+
+Available options:
+
+--host – Target host to probe (default: 8.8.8.8)
+
+--port – TCP port to connect to (default: 443)
+
+--interval – Sampling interval in seconds
+
+--buffer – Number of samples to retain
+
+--timeout – TCP connection timeout in seconds
+
+Current features:
+
+TCP-based latency sampling
+
+Background sampling thread
+
+Fixed-size ring buffer
+
+Live matplotlib visualization with basic statistics
+
+Known limitations:
+
+GUI backend support may vary by platform
+
+Matplotlib stability is still being worked on
+
+API and internal structure are subject to change
+
+## Contributing
+
+Contributions are welcome, especially while the project is still taking shape.
+
+Good places to help:
+
+Stabilizing the visualization backend
+
+Improving test coverage
+
+Adding alternative output modes (headless, CSV, logs)
+
+Designing support for additional protocols (UDP, ICMP)
+
+If you’d like to contribute:
+
+Fork the repository
+
+Create a feature branch
+
+Keep changes small and focused
+
+Open a pull request with a clear description
+
+If you’re unsure where to start, feel free to open an issue to discuss ideas or
+direction.
+
